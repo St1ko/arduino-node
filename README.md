@@ -39,6 +39,14 @@ Now go to the project directory and install the apps dependencies.
     $ yarn
 
 ### Running the app
+Before starting the application, in `script.js` on line 8: 
+
+`const port = new SerialPort("COM3", { baudRate: 9600 });`
+
+change `"COM3"` to the path of the arduino device that you would like to use.
+
+&nbsp;
+
 To start the application run the following command. This will start up the node server which connects to the arduino and serves the web page.
 
     $ node script.js
