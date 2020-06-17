@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gangpad Nudge</title>
+    <meta name="description" content="In opdracht van We Are You" />
+    <meta name="author" content="SitePoint" />
+    <link rel="stylesheet" type="text/css" href="demo.css">
+  </head>
+  <body>
+    <h1>DEMO GANGPAD</h1>
+    <div id="basis">
+      <img class="image" />
+    </div>
+    <div class="klanten">
+      <p id="demo"></p>
+      <div id="div" style="color: white;">Test</div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on("news", function (data) {
+        const div = document.getElementById("div");
+        console.log("People : ", data);
+
+        div.innerHTML = "<h3>" + data + "</h3><br>";
+
+        if (data == 0) {
+          document.getElementById("basis").style.background =
+            "url(images/demogreen.png)";
+          document.getElementById("basis").style.backgroundSize = "contain";
+        } else if (data == 1) {
+          document.getElementById("basis").style.background =
+            "url(images/demored.png)";
+          document.getElementById("basis").style.backgroundSize = "contain";
+        }
+      });
+    </script>
+  </body>
+</html>
