@@ -61,6 +61,7 @@ Go to `http://localhost:3000` to view the application that is running on your lo
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [Socket.IO](https://socket.io/)
+* [Node SerialPort](https://serialport.io/)
 
 ## Authors
 
